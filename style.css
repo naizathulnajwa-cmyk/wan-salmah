@@ -31,7 +31,7 @@ body {
   position: relative;
   width: 100%;
   aspect-ratio: 9 / 16;
-  background: url("bg3.jpg") center / cover no-repeat;
+  background: url("bg3.png") center / cover no-repeat;
 }
 
 /* BUTTON PILL */
@@ -107,4 +107,5 @@ body {
     bottom: 90px;
   }
 }
+
 
