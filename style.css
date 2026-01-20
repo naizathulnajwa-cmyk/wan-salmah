@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ddd;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 20px;
+}
+
+/* KAD */
+.card {
+  max-width: 380px;
+  margin: auto;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* BACKGROUND KAD */
+.card-bg {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: url("bg1.jpg") center / cover no-repeat;
+}
+
+/* BUTTON PILL */
+.play-pill {
+  position: absolute;
+  bottom: 67px;
+  left: 60%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  width: 100px;
+  height: 40px;
+  border-radius: 999px;
+
+  background: #FFD84D;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 14px 35px rgba(0,0,0,0.45),
+    inset 0 -3px 0 rgba(0,0,0,0.18);
+}
+
+/* PLAY TRIANGLE */
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 20px solid;
+}
+
+/* LAYER BELAKANG */
+.triangle.back {
+  border-left-color: #F39C12;
+  transform: translateX(4px);
+}
+
+/* LAYER DEPAN */
+.triangle.front {
+  border-left-color: #E74C3C;
+}
+
+/* PAUSE STATE */
+.play-pill.pause .triangle {
+  border: none;
+  width: 6px;
+  height: 22px;
+  background: #E74C3C;
+}
+
+.play-pill.pause .triangle.back {
+  transform: translateX(-6px);
+}
+
+.play-pill.pause .triangle.front {
+  transform: translateX(6px);
+}
+
+/* TAP FEEDBACK */
+.play-pill:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+/* RESPONSIVE */
+@media (max-height: 700px) {
+  .play-pill {
+    bottom: 90px;
+  }
+}
